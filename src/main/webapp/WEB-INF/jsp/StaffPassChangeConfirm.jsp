@@ -17,24 +17,16 @@
 <!--    <p> メールアドレス：<c:out value="${resisterUser.email}" /> </p>-->
 <!--    <p> 氏名：<c:out value="${resisterUser.name}" /> </p>-->
 <!--    <p> 年齢：<c:out value="${resisterUser.age}" /> </p>-->
-<a href="ClientCertificationUpdateServlet">受給者証有効期限の更新画面へ</a>
+<a href="StaffPassChangeServlet">職員のパスワード変更の画面へ</a>
 </c:if>
 <%-- エラーがない場合のみ表示 --%>
 <c:if test="${empty errorMsg}">
-<h1>受給者証有効期限の更新内容の確認</h1>
-
-<!--    <p> 利用者番号：<c:out value="${account3.client_Id}" /> </p>-->
-    <p> 利用者様氏名：<c:out value="${account3.name_sei}" /> 　<c:out value="${account3.name_mei}" /></p>
+<h1>職員のパスワード変更の確認</h1>
 
         <%-- ★修正箇所：本日日付を表示 --%>
-    <p> 登録されていた有効期限：
-        <fmt:formatDate value="${account3.expiration_start}" pattern="yyyy年MM月dd日" />
-    </p>
-    <p> 
-    	今回登録した有効期限： <c:out value="${formattedNextDate}" />
-    </p>
+    <p> パスワードは正しく変更されました。
     <br>
-    <a href="ClientMenuServlet">利用者様用メニューへ</a><br>
+    <a href="StaffMenuServlet">職員用メニューへ</a><br>
     <a href="LogoutServlet">ログアウト</a>
 </c:if>
 

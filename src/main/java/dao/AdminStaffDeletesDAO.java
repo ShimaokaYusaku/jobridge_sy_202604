@@ -5,15 +5,15 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import model.AdminStaffResister;
+import model.AdminStaffDelete;
 
-public class AdminStaffResistersDAO {
+public class AdminStaffDeletesDAO {
 	// 接続情報
 	String url = "jdbc:mysql://localhost:3306/jobridge_202604"; // データベース名を指定
 	String user = "root";
 	String password = "root";
   
-	public boolean create_asr(AdminStaffResister asr) {
+	public boolean create_asd(AdminStaffDelete asd) {
 		
 		
     // JDBCドライバを読み込む(記載がなくてもよい)
@@ -27,28 +27,21 @@ public class AdminStaffResistersDAO {
 	try (Connection conn = DriverManager.getConnection(url, user, password)) {
 
 	      // INSERT文の準備(idは自動連番なので指定しなくてよい） STAFF_PASSは書かなければデフォルト値が入ります。
-  	  String sql = "INSERT INTO STAFF(STAFF_LOGIN_NAME, STAFF_NAME_SEI, STAFF_NAME_MEI, STAFF_NAME_SEI_KANA, STAFF_NAME_MEI_KANA, AUTHORITY) VALUES(?, ?, ?, ?, ?, ?)";
+  	  String sql = "DELETE FROM STAFF WHERE STAFF_NAME_SEI=? AND STAFF_NAME_MEI=?";
 	      PreparedStatement pStmt = conn.prepareStatement(sql);
 	      
-	      // INSERT文中の「?」に使用する値を設定しSQLを完成
+	      // DELETE文中の「?」に使用する値を設定しSQLを完成
 
-	      pStmt.setString(1, asr.getAdmin_staff_login_name());
-	      pStmt.setString(2, asr.getAdmin_staff_name_sei());
-	      pStmt.setString(3, asr.getAdmin_staff_name_mei());
-	      pStmt.setString(4, asr.getAdmin_staff_name_sei_kana());
-	      pStmt.setString(5, asr.getAdmin_staff_name_mei_kana());
-	      pStmt.setString(6, asr.getStaff_authority());
+	      pStmt.setString(1, asd.getDelete_admin_staff_name_sei());
+	      pStmt.setString(2, asd.getDelete_admin_staff_name_mei());
+
 	      
-    	  System.out.println("STAFF情報のINSERT処理途中・・・");
-    	  
-    	  
-
-
+    	  System.out.println("STAFF情報のDELETE処理途中・・・");
 
 	      // INSERT文を実行（resultには追加された行数が代入される）
 	      int result = pStmt.executeUpdate();
 	      if (result != 1) {
-	    	  System.out.println("STAFF情報のINSERTが出来ない");
+	    	  System.out.println("STAFF情報のDELETEが出来ない");
 	        return false;
 	      }
 	    } catch (SQLException e) {
@@ -57,7 +50,7 @@ public class AdminStaffResistersDAO {
       e.printStackTrace();
       return false;
 	    }
-	  System.out.println("STAFF情報のINSERT完了");
+	  System.out.println("STAFF情報のDELETE完了");
 	    return true;
 	  }
 	}

@@ -27,7 +27,7 @@ response.setDateHeader("Expires", 0);
 	<p>
 	★登録情報の閲覧、およびデータ取得、印刷など<br>
 	　・利用者様情報<br>
-	　・利用者様一覧（氏名のみ）<br>
+	　・利用者様一覧 [氏名のみ] <br>
 	　・利用者様の勤怠管理情報<br>
 	　・日ごとの出席者一覧<br>
 	　・利用者様の利用開始／終了および就職先情報<br>
@@ -40,19 +40,19 @@ response.setDateHeader("Expires", 0);
 	　・担当者会議記録<br>
 	<br>
 	★新規追加、および登録情報の修正、更新など<br>
-	　・利用者様情報<br>
+	<a href="ClientResisterServlet">・利用者様の新規追加</a><br>
 	　・利用者様の勤怠管理情報<br>
 	　・利用者様の利用開始／終了および就職先情報<br>
 	　・障がい者受給者票の更新状況<br>
 	　・面談記録<br>
 	　・担当者会議記録<br>
 	<br>
-	（★職員登録　Adminのみ表示）<br>
-	（★職員の登録削除）<br>
-	（★利用者の登録削除）<br>
-	（★職員一覧（氏名のみ）　Adminのみ表示）<br>
+	<a href="AdminStaffResisterServlet">★職員登録　(Adminのみ）</a><br>
+	<a href="AdminStaffDeleteServlet">★職員の登録削除　(Adminのみ）</a><br>
+	★利用者の登録削除　(Adminのみ）<br>
+	★職員一覧 [氏名のみ]　(Adminのみ）<br>
 	<br>
-		パスワードの変更<br>
+	<a href="StaffPassChangeServlet">パスワードの変更</a><br>
 	</p>
 	<p>
     <a href="LogoutServlet">ログアウト</a>

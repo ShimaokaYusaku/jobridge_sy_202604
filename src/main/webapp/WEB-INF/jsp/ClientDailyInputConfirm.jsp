@@ -37,7 +37,7 @@
     <p> カリキュラム記録：<c:out value="${clientdaily.work_record}" /> </p>
     <p> 所感：<c:out value="${clientdaily.impression}" /> </p>
     <br>
-    
+    <a href="ClientMenuServlet">利用者様用メニューへ</a><br>
     <a href="LogoutServlet">ログアウト</a>
 </c:if>
 

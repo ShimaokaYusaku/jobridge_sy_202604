@@ -14,15 +14,15 @@
 <p> <c:out value="${errorMsg }"/> </p>
     <br>
 
-<a href="AdminStaffResisterServlet">職員の登録画面へ</a>
+<a href="AdminStaffDeleteServlet">職員登録の削除画面へ</a>
 </c:if>
 <%-- エラーがない場合のみ表示 --%>
 <c:if test="${empty errorMsg}">
-<h1>追加登録する職員の確認</h1>
-	<p> 職員のログイン名：<c:out value="${AdminStaffResister.admin_staff_login_name}" /> </p>
-    <p> 職員の氏名：<c:out value="${AdminStaffResister.admin_staff_name_sei}" /> 　<c:out value="${AdminStaffResister.admin_staff_name_mei}" /></p>
-    <p> 職員の氏名（ふりがな）：<c:out value="${AdminStaffResister.admin_staff_name_sei_kana}" /> 　<c:out value="${AdminStaffResister.admin_staff_name_mei_kana}" /></p>
-    <p> 権限：<c:out value="${AdminStaffResister.staff_authority}" /> </p>
+<h1>職員削除の確認</h1>
+
+    <p> 職員の氏名：<c:out value="${AdminStaffDelete.delete_admin_staff_name_sei}" /> 　<c:out value="${AdminStaffDelete.delete_admin_staff_name_mei}" /></p>
+    <p> の登録を削除しました。</p>
+
     <br>
     <a href="StaffMenuServlet">職員用メニューへ</a><br>
     <a href="LogoutServlet">ログアウト</a>
@@ -30,4 +30,3 @@
 
 </body>
 </html>
-

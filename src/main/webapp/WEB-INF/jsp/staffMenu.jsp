@@ -40,7 +40,7 @@ response.setDateHeader("Expires", 0);
 	　・担当者会議記録<br>
 	<br>
 	★新規追加、および登録情報の修正、更新など<br>
-	　・利用者様情報<br>
+	<a href="ClientResisterServlet">・利用者様の新規追加</a><br>
 	　・利用者様の勤怠管理情報<br>
 	　・利用者様の利用開始／終了および就職先情報<br>
 	　・障がい者受給者票の更新状況<br>
@@ -52,7 +52,7 @@ response.setDateHeader("Expires", 0);
 	<br>
 	<br>
 	<br>
-		パスワードの変更<br>
+	<a href="StaffPassChangeServlet">パスワードの変更</a><br>
 	</p>
 	<p>
     <a href="LogoutServlet">ログアウト</a>

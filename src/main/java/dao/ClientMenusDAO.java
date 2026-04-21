@@ -31,7 +31,7 @@ public class ClientMenusDAO {
 	try (Connection conn = DriverManager.getConnection(url, user, password)) {
 
       // SELECT文を準備
-      String sql = "SELECT CLIENT_ID, CLIENT_LOGIN_NAME, NAME_SEI, NAME_MEI, EXPIRATION_START FROM CLIENT WHERE CLIENT_LOGIN_NAME = ? ";
+      String sql = "SELECT CLIENT_ID, CLIENT_LOGIN_NAME, CLIENT_NAME_SEI, CLIENT_NAME_MEI, EXPIRATION_START FROM CLIENT WHERE CLIENT_LOGIN_NAME = ? ";
 //      String sql = "SELECT CLIENT_LOGIN_NAME, CLIENT_PASS FROM CLIENT WHERE CLIENT_LOGIN_NAME = ? AND CLIENT_PASS = ?";
       PreparedStatement pStmt = conn.prepareStatement(sql);
       
@@ -49,8 +49,8 @@ public class ClientMenusDAO {
         // ユーザーが存在したらデータを取得
         // そのユーザーを表すAccountインスタンスを生成
         int client_Id = rs.getInt("CLIENT_ID");
-        String name_sei = rs.getString("NAME_SEI");
-        String name_mei = rs.getString("NAME_MEI");
+        String name_sei = rs.getString("CLIENT_NAME_SEI");
+        String name_mei = rs.getString("CLIENT_NAME_MEI");
         Date expiration_start = rs.getDate("EXPIRATION_START");
 	    
 //        account = new Account(client_login_name, client_pass);

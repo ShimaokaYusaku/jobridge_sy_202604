@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%
     // セッションからデータ（account3）を取得
-    if (session.getAttribute("account3") == null) {
+    if (session.getAttribute("staffaccount3") == null) {
         // ログインしていない場合はログイン画面へ強制送還
         response.sendRedirect("loginmenu.html");
         return; // 以降の処理を中断
@@ -15,13 +15,14 @@
 <title>ジョブリッジ</title>
 </head>
 <body>
-<h1>利用者様の勤怠記録</h1>
-<form action="ClientDailyInputServlet" method="post">
-入室時間:<input type="time" name="start_time"><br>
-退室時間:<input type="time" name="end_time"><br>
-本日の体調 (20文字以内で) :<input type="text" name="condition"><br>
-カリキュラム記録  (100文字以内で) :<input type="text" name="work_record"><br>
-所感[最大300文字程度]:<input type="text" name="impression"><br>
+<h1>職員のパスワード変更登録</h1>
+	<p>
+	 職員の氏名：${staffaccount3.staff_name_sei} ${staffaccount3.staff_name_mei}<br>
+	</p>
+
+<form action="StaffPassChangeServlet" method="post">
+新しい パスワード[半角英数両方を用いて 8 ～ 20文字]　　　　　:<input type="password" name="staff_pass_next" pattern="^[a-zA-Z0-9]{8,20}$" minlength="8" maxlength="20" required><br>
+新しい パスワード[半角英数両方を用いて 8 ～ 20文字]（再入力）:<input type="password" name="staff_pass_next_again"><br>
 <input type="submit" value="登録する">
 </form>
 <script>
@@ -33,6 +34,3 @@ window.onpageshow = function(event) {
 </script>
 </body>
 </html>
-
-
-

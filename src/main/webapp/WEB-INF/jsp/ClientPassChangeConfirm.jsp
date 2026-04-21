@@ -27,6 +27,7 @@
     <p> パスワードは正しく変更されました。
     <br>
     
+    <a href="ClientMenuServlet">利用者様用メニューへ</a><br>
     <a href="LogoutServlet">ログアウト</a>
 </c:if>
 

@@ -13,7 +13,7 @@
 	</p>
 	<br>
 	<p>
-		<a href="clientLogin.jsp">利用者様用ログイン画面へ</a><br>
+		<a href="ClientLoginServlet">利用者様用ログイン画面へ</a><br>
 		<a href="loginmenu.html">ログインメニュー画面へ</a>
 	</p>
 <!--		<a href="StaffLoginServlet">職員の方はこちら</a>-->

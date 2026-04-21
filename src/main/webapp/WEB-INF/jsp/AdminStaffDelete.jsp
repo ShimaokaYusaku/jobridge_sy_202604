@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%
     // セッションからデータ（account3）を取得
-    if (session.getAttribute("account3") == null) {
+    if (session.getAttribute("staffaccount3") == null) {
         // ログインしていない場合はログイン画面へ強制送還
         response.sendRedirect("loginmenu.html");
         return; // 以降の処理を中断
@@ -15,14 +15,11 @@
 <title>ジョブリッジ</title>
 </head>
 <body>
-<h1>利用者様の勤怠記録</h1>
-<form action="ClientDailyInputServlet" method="post">
-入室時間:<input type="time" name="start_time"><br>
-退室時間:<input type="time" name="end_time"><br>
-本日の体調 (20文字以内で) :<input type="text" name="condition"><br>
-カリキュラム記録  (100文字以内で) :<input type="text" name="work_record"><br>
-所感[最大300文字程度]:<input type="text" name="impression"><br>
-<input type="submit" value="登録する">
+<h1>登録を削除する職員情報の入力</h1>
+<form action="AdminStaffDeleteServlet" method="post">
+削除する職員の氏名（漢字）　(姓):<input type="text" name="delete_admin_staff_name_sei">　　(名):<input type="text" name="delete_admin_staff_name_mei"><br>
+
+<input type="submit" value="削除する">
 </form>
 <script>
 window.onpageshow = function(event) {
@@ -33,6 +30,3 @@ window.onpageshow = function(event) {
 </script>
 </body>
 </html>
-
-
-
