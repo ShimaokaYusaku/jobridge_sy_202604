@@ -35,10 +35,10 @@ public class DownloadClientSingleInfoCsvServlet extends HttpServlet {
 
         try (PrintWriter pw = response.getWriter()) {
             // ヘッダー（項目名）の書き込み
+            pw.println("利用者様情報（個人別）");
             pw.println("項目,内容");
             
             // データの書き込み（カンマ区切り）
-            pw.println("ログイン名," + csiList.getClient_login_name());
             pw.println("氏名," + csiList.getClient_name_sei() + " " + csiList.getClient_name_mei());
             pw.println("氏名（かな）," + csiList.getClient_name_sei_kana() + " " + csiList.getClient_name_mei_kana());
             pw.println("誕生日," + csiList.getBirthday());

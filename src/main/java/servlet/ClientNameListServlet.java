@@ -30,6 +30,7 @@ public class ClientNameListServlet extends HttpServlet {
 	    	  HttpSession session10 = request.getSession(); // セッションを取得
 	    	  session10.setAttribute("cnList_List", cnList_List);
 	    	  
+	    	  
 	          RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/ClientNameList.jsp");
 	          dispatcher.forward(request, response);
 	}

@@ -19,18 +19,18 @@
 </c:if>
 <%-- エラーがない場合のみ表示 --%>
 <c:if test="${empty errorMsg}">
-<h1>登録されている利用者様の氏名リスト</h1>
+<h1>登録されている職員の氏名リスト</h1>
     <!-- ボタンの追加箇所 -->
-	<form action="DownloadClientNameListCsvServlet" method="post" style="display:inline;">
+	<form action="DownloadStaffNameListCsvServlet" method="post" style="display:inline;">
     <!-- サーブレットにデータを渡すため、必要な値を隠しフィールドで送るか、セッションから取得するようにします -->
     <input type="submit" value="CSV形式で保存する">
 	</form>	
 
 	<br>
 	<p>
-	●利用者様の氏名<br>
-	<c:forEach var="cnList" items="${cnList_List}">
-	<c:out value="${cnList.client_name_sei}" />　<c:out value="${cnList.client_name_mei}" /><br>
+	●職員の氏名<br>
+	<c:forEach var="snList" items="${snList_List}">
+	<c:out value="${snList.staff_name_sei}" />　<c:out value="${snList.staff_name_mei}" /><br>
 	</c:forEach>
 	</p>
     <br>

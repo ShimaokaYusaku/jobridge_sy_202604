@@ -25,10 +25,10 @@ response.setDateHeader("Expires", 0);
 	 職員氏名：${staffaccount3.staff_name_sei} ${staffaccount3.staff_name_mei}
 	</p>
 	<p>
-	★登録情報の閲覧、およびデータ取得、印刷など<br>
+	★登録情報の閲覧、およびcsvデータ取得<br>
 	<a href="ClientSingleInfoServlet">・利用者様情報（個別）</a><br>
 	<a href="ClientNameListServlet">・利用者様氏名一覧（氏名のみ）</a><br>
-	　・利用者様の勤怠管理情報<br>
+	<a href="ClientTimeRecordInfoServlet">・利用者様の勤怠管理情報</a><br>
 	　・日ごとの出席者一覧<br>
 	　・利用者様の利用開始／終了および就職先情報<br>
 	　・就職先情報一覧<br>
@@ -39,7 +39,7 @@ response.setDateHeader("Expires", 0);
 	　・面談記録<br>
 	　・担当者会議記録<br>
 	<br>
-	★新規追加、および登録情報の修正、更新など<br>
+	★新規追加<br>
 	<a href="ClientResisterServlet">・利用者様の新規追加</a><br>
 	　・利用者様の勤怠管理情報<br>
 	　・利用者様の利用開始／終了および就職先情報<br>
@@ -49,8 +49,8 @@ response.setDateHeader("Expires", 0);
 	<br>
 	<a href="AdminStaffResisterServlet">★職員登録　(Adminのみ）</a><br>
 	<a href="AdminStaffDeleteServlet">★職員の登録削除　(Adminのみ）</a><br>
-	★利用者の登録削除　(Adminのみ）<br>
-	★職員一覧 [氏名のみ]　(Adminのみ）<br>
+	<a href="AdminClientDeleteServlet">★利用者の登録削除　(Adminのみ）</a><br>
+	<a href="StaffNameListServlet">★職員一覧 [氏名のみ]　(Adminのみ）</a><br>
 	<br>
 	<a href="StaffPassChangeServlet">パスワードの変更</a><br>
 	</p>

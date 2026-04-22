@@ -11,38 +11,38 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-import model.ClientNameList;
+import model.StaffNameList;
 
 /**
- * Servlet implementation class DownloadClientNameListCsvServlet
+ * Servlet implementation class DownloadStaffNameListCsvServlet
  */
-@WebServlet("/DownloadClientNameListCsvServlet")
-public class DownloadClientNameListCsvServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+@WebServlet("/DownloadStaffNameListCsvServlet")
+public class DownloadStaffNameListCsvServlet extends HttpServlet {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         // セッション等から表示中のデータを取得（csiListがセッションにある前提）
         HttpSession session = request.getSession();
-        List<ClientNameList> cnList_List = (List<ClientNameList>) session.getAttribute("cnList_List");
+        List<StaffNameList> snList_List = (List<StaffNameList>) session.getAttribute("snList_List");
         
-        if (cnList_List == null) {
+        if (snList_List == null) {
             response.sendRedirect("StaffMenuServlet");
             return;
         }
 
         // ファイル名とコンテンツタイプの設定
-        String fileName = "client_name_list.csv";
+        String fileName = "staff_name_list.csv";
         response.setContentType("text/csv; charset=Shift_JIS"); // Excel対応のためShift_JIS
         response.setHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
 
         try (PrintWriter pw = response.getWriter()) {
             // ヘッダー（項目名）の書き込み
-            pw.println("登録された利用者様の氏名リスト");
+            pw.println("登録されている職員の氏名リスト");
             int i=0;
             // データの書き込み（拡張for文で1件ずつ処理）
-            for (ClientNameList cnList : cnList_List) {
+            for (StaffNameList snList : snList_List) {
                 // ゲッターを使用して中身を取得し、カンマで区切って書き込む
             	i++;
-            	pw.println(String.format("%04d", i) + "," + cnList.getClient_name_sei() + " " + cnList.getClient_name_mei());
+            	pw.println(String.format("%04d", i) + "," + snList.getStaff_name_sei() + " " + snList.getStaff_name_mei());
             }
             
             pw.flush();

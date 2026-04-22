@@ -21,7 +21,7 @@
 <c:if test="${empty errorMsg}">
 <h1>登録されている利用者様情報</h1>
     <!-- ボタンの追加箇所 -->
-	<form action="DownloadCsvServlet" method="post" style="display:inline;">
+	<form action="DownloadClientSingleInfoCsvServlet" method="post" style="display:inline;">
     <!-- サーブレットにデータを渡すため、必要な値を隠しフィールドで送るか、セッションから取得するようにします -->
     <input type="submit" value="CSV形式で保存する">
 	</form>	
