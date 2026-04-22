@@ -29,6 +29,7 @@
         <option value="－－">－－</option>
     </select><br>
 住所:<input type="text" name="address"><br>
+記入例：大阪府大阪市北区〇〇〇１-１-１２-３１０
 電話番号(ハイフォン付きで (例) 090-oooo-oooo):<input type="text" name="phone"><br>
 <br>
 
@@ -51,8 +52,8 @@
 最寄駅:<input type="text" name="station"><br>
 交通費:<input type="number" name="expenses"> 円 <br>
 事業所までの経路 [最大300文字程度]:<br>
-記入例：　徒歩１０分－　京阪バス（三井団地～寝屋川市）　－京阪電車（寝屋川市～京橋）　－ＪＲ（京橋～北新地）　－徒歩１０分<br>
-<input type="text" name="route"><br>
+記入例：　徒歩１０分 --- 京阪バス（三井団地 - 寝屋川市） --- 京阪電車（寝屋川市 - 京橋） --- ＪＲ（京橋 - 北新地） --- 徒歩１０分<br>
+<textarea name="route" style="width: 70%; height: 100px; vertical-align: top;"></textarea><br>
 <br>
 <input type="submit" value="登録する">
 </form>

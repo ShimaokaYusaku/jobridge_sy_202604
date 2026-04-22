@@ -26,8 +26,8 @@ response.setDateHeader("Expires", 0);
 	</p>
 	<p>
 	★登録情報の閲覧、およびデータ取得、印刷など<br>
-	　・利用者様情報<br>
-	　・利用者様一覧（氏名のみ）<br>
+	<a href="ClientSingleInfoServlet">・利用者様情報（個別）</a><br>
+	<a href="ClientNameListServlet">・利用者様氏名一覧（氏名のみ）</a><br>
 	　・利用者様の勤怠管理情報<br>
 	　・日ごとの出席者一覧<br>
 	　・利用者様の利用開始／終了および就職先情報<br>
