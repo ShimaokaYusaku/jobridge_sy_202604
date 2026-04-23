@@ -27,17 +27,9 @@ public class SetLogoutFilter implements Filter {
             throws IOException, ServletException {
 
         HttpServletResponse httpResponse = (HttpServletResponse) response;
-
-        // HTTP 1.1: キャッシュを保存させず、毎回サーバーに確認させる
-        httpResponse.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0");
-        
-        // HTTP 1.0 互換用
-        httpResponse.setHeader("Pragma", "no-cache");
-        
-        // プロキシサーバー等でのキャッシュ防止（過去の時間を設定）
-        httpResponse.setDateHeader("Expires", 0);
-
-        // 次の処理（実際のJSPやサーブレット）へ渡す
+        httpResponse.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1
+        httpResponse.setHeader("Pragma", "no-cache"); // HTTP 1.0
+        httpResponse.setDateHeader("Expires", 0); // Proxies
         chain.doFilter(request, response);
     }
 

@@ -14,7 +14,7 @@
 	<br>
 	<p>
 		<a href="StaffLoginServlet">職員用ログイン画面へ</a><br>
-		<a href="loginmenu.html">ログインメニュー画面へ</a>
+		<a href="index.html">ログインメニュー画面へ</a>
 	</p>
 <!--		<a href="StaffLoginServlet">職員の方はこちら</a>-->
 </body>

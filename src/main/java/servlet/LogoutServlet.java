@@ -25,6 +25,6 @@ public class LogoutServlet extends HttpServlet {
         
         // 2. ログアウト後の画面へリダイレクト
         // loginmenu.html またはログイン用JSPを指定
-        response.sendRedirect("loginmenu.html");
+        response.sendRedirect("index.html");
     }
 }

@@ -9,7 +9,7 @@ response.setDateHeader("Expires", 0);
     // セッションからデータ（account3）を取得
     if (session.getAttribute("staffaccount3") == null) {
         // ログインしていない場合はログイン画面へ強制送還
-        response.sendRedirect("loginmenu.html");
+        response.sendRedirect("index.html");
         return; // 以降の処理を中断
     }
 %>
@@ -44,7 +44,7 @@ response.setDateHeader("Expires", 0);
 	　・利用者様の勤怠管理情報<br>
 	　・利用者様の利用開始／終了および就職先情報<br>
 	　・障がい者受給者票の更新状況<br>
-	　・面談記録<br>
+	<a href="StaffInterviewServlet">・面談記録</a><br>
 	　・担当者会議記録<br>
 	<br>
 	<br>

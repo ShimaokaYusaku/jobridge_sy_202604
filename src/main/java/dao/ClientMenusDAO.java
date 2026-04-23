@@ -35,12 +35,7 @@ public class ClientMenusDAO {
 //      String sql = "SELECT CLIENT_LOGIN_NAME, CLIENT_PASS FROM CLIENT WHERE CLIENT_LOGIN_NAME = ? AND CLIENT_PASS = ?";
       PreparedStatement pStmt = conn.prepareStatement(sql);
       
-//      pStmt.setInt(1, login.getClient_Id());
-//      pStmt.setString(2, login.getClient_login_name());
-//      pStmt.setString(3, login.getClient_pass());
-      
       pStmt.setString(1, login.getClient_login_name());
-
 
       // SELECTを実行し、結果表を取得
       ResultSet rs = pStmt.executeQuery();

@@ -56,10 +56,10 @@ public class ClientCertificationUpdateServlet extends HttpServlet {
 	        // フォワード（確認画面へ）
 	    	// LocalDateを文字列(String)に変換
 	    	  DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy年MM月dd日");
-	    	  String formattedDate = clientexpirationnext.getExpirationnext().format(fmt);
+	    	  String formattedNextDate = clientexpirationnext.getExpirationnext().format(fmt);
 
 	    	  // 文字列としてリクエストにセット
-	    	  request.setAttribute("formattedNextDate", formattedDate);
+	    	  request.setAttribute("formattedNextDate", formattedNextDate);
 	    	  
 //	    	  request.setAttribute("clientexpirationnext",clientexpirationnext);
 	        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/ClientCertificationUpdateConfirm.jsp");

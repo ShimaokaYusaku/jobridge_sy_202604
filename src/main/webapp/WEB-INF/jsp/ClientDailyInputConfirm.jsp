@@ -40,7 +40,13 @@
     <a href="ClientMenuServlet">利用者様用メニューへ</a><br>
     <a href="LogoutServlet">ログアウト</a>
 </c:if>
-
+<script>
+window.onpageshow = function(event) {
+    if (event.persisted) {
+        window.location.reload(); // キャッシュから復元された場合に強制リロード
+    }
+};
+</script>
 </body>
 </html>
 

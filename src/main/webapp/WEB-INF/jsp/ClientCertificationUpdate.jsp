@@ -4,7 +4,7 @@
     // セッションからデータ（account3）を取得
     if (session.getAttribute("account3") == null) {
         // ログインしていない場合はログイン画面へ強制送還
-        response.sendRedirect("loginmenu.html");
+        response.sendRedirect("index.html");
         return; // 以降の処理を中断
     }
 %>
