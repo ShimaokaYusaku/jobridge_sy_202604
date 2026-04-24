@@ -17,7 +17,7 @@
 <body>
 <h1>面談記録を確認したい利用者様の氏名入力</h1>
 <form action="StaffInterviewCheckServlet" method="post">
-利用者様の氏名（漢字）　(姓):<input type="text" name="staffInterview_name_sei">　　(名):<input type="text" name="staffInterview_name_mei"><br>
+利用者様の氏名（漢字）　(姓):<input type="text" name="staffInterviewCheck_name_sei">　　(名):<input type="text" name="staffInterviewCheck_name_mei"><br>
 
 <input type="submit" value="表示する">
 </form>

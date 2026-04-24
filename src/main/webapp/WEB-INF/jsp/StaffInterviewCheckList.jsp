@@ -28,21 +28,19 @@
 
 	<p>
 	●利用者様の面談記録<br>
-	利用者様の氏名：　<c:out value="${sivCheck2.staffInterview_name_sei}" /> 　<c:out value="${sivCheck2.staffInterview_name_mei}" /><br>
+	利用者様の氏名：　<c:out value="${sivcInfo2.staffInterviewCheck_name_sei}" /> 　<c:out value="${sivcInfo2.staffInterviewCheck_name_mei}" /><br>
 	</p>
-	
-<section>
+	面談年月日 / 面談職員 / 面談の記録
     <table>
-        <c:forEach var="item" items="${monthlyMap[currentMonth]}">
+        <c:forEach var="sivcList" items="${sivcList_List}">
             <tr>
-                <td><c:out value="${item.work_day}"/> / </td>
-                <td><c:out value="${item.start_time}"/> 〜 <c:out value="${item.end_time}"/></td>
+                <td><c:out value="${sivcList.interview_day}"/> / </td>
+                <td><c:out value="${sivcList.staff_name_sei}"/> <c:out value="${sivcList.staff_name_mei}"/> / </td>
+                <td><c:out value="${sivcList.interview_record}"/> </td>
             </tr>
         </c:forEach>
     </table>
-</section>
 
-<hr>
     <br>
     
     <a href="StaffMenuServlet">職員用メニューへ</a><br>

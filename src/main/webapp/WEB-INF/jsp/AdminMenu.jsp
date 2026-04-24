@@ -36,17 +36,16 @@ response.setDateHeader("Expires", 0);
 	　・障がい者受給者票の更新状況<br>
 	　・障がい者手帳、種別、等級一覧<br>
 	　・最寄駅、経路（一部）、交通費一覧<br>
-	　・面談記録<br>
-	　・担当者会議記録<br>
+	<a href="StaffInterviewCheckServlet">・面談記録</a><br>
+	<a href="StaffMeetingCheckServlet">・担当者会議記録</a><br>
 	<br>
 	★新規追加<br>
 	<a href="ClientResisterServlet">・利用者様の新規追加</a><br>
-	　・利用者様の勤怠管理情報<br>
 	　・利用者様の利用開始／終了および就職先情報<br>
-	　・障がい者受給者票の更新状況<br>
 	<a href="StaffInterviewServlet">・面談記録</a><br>
-	　・担当者会議記録<br>
+	<a href="StaffMeetingServlet">・担当者会議記録</a><br>
 	<br>
+	★Adminのみ
 	<a href="AdminStaffResisterServlet">★職員登録　(Adminのみ）</a><br>
 	<a href="AdminStaffDeleteServlet">★職員の登録削除　(Adminのみ）</a><br>
 	<a href="AdminClientDeleteServlet">★利用者の登録削除　(Adminのみ）</a><br>
