@@ -41,7 +41,7 @@ response.setDateHeader("Expires", 0);
 	<br>
 	★新規追加<br>
 	<a href="ClientResisterServlet">・利用者様の新規追加</a><br>
-	　・利用者様の利用開始／終了および就職先情報<br>
+	<a href="StaffClientSupportServlet">・利用者様の利用開始／終了および就職先情報</a><br>
 	<a href="StaffInterviewServlet">・面談記録</a><br>
 	<a href="StaffMeetingServlet">・担当者会議記録</a><br>
 	<br>

@@ -29,10 +29,11 @@
         <option value="－－">－－</option>
     </select><br>
 住所:<input type="text" name="address"><br>
-記入例：大阪府大阪市北区〇〇〇１-１-１２-３１０
+記入例：大阪府大阪市北区〇〇〇１-１-１２-３１０<br>
 電話番号(ハイフォン付きで (例) 090-oooo-oooo):<input type="text" name="phone"><br>
 <br>
-
+利用を開始した年月日（全て半角でoooo/oo/oo）:<input type="date" name="admission_day"><br>
+<br>
 ●緊急連絡先関係<br>
 氏名:<input type="text" name="emergency_name"><br>
 続柄:<input type="text" name="emergency_rel"><br>

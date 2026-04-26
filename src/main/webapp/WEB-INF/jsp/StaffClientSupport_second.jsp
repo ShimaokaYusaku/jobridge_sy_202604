@@ -15,9 +15,9 @@
 <title>ジョブリッジ</title>
 </head>
 <body>
-<h1>利用者様の利用開始／終了の年月日および就職先情報の入力</h1>
-<form action="StaffClientSupportServlet" method="post">
-情報を入力する利用者様の氏名（漢字）　(姓):<input type="text" name="staffClientSupport_name_sei">　　(名):<input type="text" name="staffClientSupport_name_mei"><br>
+<h1>利用者様の利用終了の年月日および就職先情報の更新</h1>
+<form action="StaffClientSupportUpdateServlet" method="post">
+情報を更新する利用者様の氏名（漢字）　(姓):<input type="text" name="staffClientSupport_second_name_sei">　　(名):<input type="text" name="staffClientSupport_second_name_mei"><br>
 
 <input type="submit" value="表示する">
 </form>

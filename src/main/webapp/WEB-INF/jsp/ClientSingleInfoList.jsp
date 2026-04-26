@@ -42,6 +42,10 @@
 	住所:　<c:out value="${csiList.address}" /><br>
 	電話番号:　<c:out value="${csiList.phone}" /><br>
 	</p>
+		<%-- 1. まず現在の形式（yyyy-MM-dd）で文字列を日付オブジェクトに変換 --%>
+	<fmt:parseDate value="${csiList.admissionday}" var="parsedAdmissionday" pattern="yyyy-MM-dd" />
+	<%-- 2. 変換した日付オブジェクトを日本語形式（yyyy年M月d日）で表示 --%>
+	利用を開始した年月日: 　<fmt:formatDate value="${parsedAdmissionday}" pattern="yyyy年M月d日" /><br>
 	<p>
 	●緊急連絡先関係<br>
 	氏名:　<c:out value="${csiList.emergency_name}" /><br>

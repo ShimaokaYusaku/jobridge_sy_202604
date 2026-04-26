@@ -12,6 +12,7 @@ public class ClientResister {
 	  private String gender;
 	  private String address;
 	  private String phone;
+	  private LocalDate admissionday;
 	  private String emergency_name;
 	  private String emergency_rel;
 	  private String emergency_phone;
@@ -27,7 +28,7 @@ public class ClientResister {
 	  
 
 	  public ClientResister() {}
-	  public ClientResister(String client_login_name, String client_name_sei,String client_name_mei,String client_name_sei_kana, String client_name_mei_kana, LocalDate birthday, String gender, String address, String phone, String emergency_name, String emergency_rel, String emergency_phone, String disability, LocalDate expiration_start, String hospital, String doctor, String disability_type, String disability_grade, String station, String expenses, String route) {
+	  public ClientResister(String client_login_name, String client_name_sei,String client_name_mei,String client_name_sei_kana, String client_name_mei_kana, LocalDate birthday, String gender, String address, String phone, LocalDate admissionday, String emergency_name, String emergency_rel, String emergency_phone, String disability, LocalDate expiration_start, String hospital, String doctor, String disability_type, String disability_grade, String station, String expenses, String route) {
 	    this.client_login_name = client_login_name;
 	    this.client_name_sei = client_name_sei;
 	    this.client_name_mei = client_name_mei;
@@ -37,6 +38,7 @@ public class ClientResister {
 	    this.gender = gender;
 	    this.address = address;
 	    this.phone = phone;
+	    this.admissionday = admissionday;
 	    this.emergency_name = emergency_name;
 	    this.emergency_rel = emergency_rel;
 	    this.emergency_phone = emergency_phone;
@@ -76,6 +78,9 @@ public class ClientResister {
 	  }
 	  public String getPhone() {
 		  return phone;
+	  }
+	  public LocalDate getAdmissionday() {
+		  return admissionday;
 	  }
 	  public String getEmergency_name() {
 		  return emergency_name;
@@ -139,6 +144,9 @@ public class ClientResister {
 	  }
 	  public void setPhone(String phone) {
 		  this.phone = phone;
+	  }
+	  public void setAdmissionday(LocalDate admissionday) {
+		  this.admissionday = admissionday;
 	  }
 	  public void setEmergency_name(String emergency_name) {
 		  this.emergency_name = emergency_name;

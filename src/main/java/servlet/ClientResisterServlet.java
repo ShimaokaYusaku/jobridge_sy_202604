@@ -39,6 +39,7 @@ public class ClientResisterServlet extends HttpServlet {
 	    String gender = request.getParameter("gender");
 	    String address = request.getParameter("address");
 	    String phone = request.getParameter("phone");
+	    String admission_day = request.getParameter("admission_day");
 	    String emergency_name = request.getParameter("emergency_name");
 	    String emergency_rel = request.getParameter("emergency_rel");
 	    String emergency_phone = request.getParameter("emergency_phone");
@@ -57,15 +58,16 @@ public class ClientResisterServlet extends HttpServlet {
 	    System.out.println("Dailyに持ち越されたaccount内の値は、"+staffaccount3);
 
 	    // 入力値チェック
-	    if (client_login_name != null && client_login_name.length() != 0 && client_name_sei != null && client_name_sei.length() != 0 && client_name_mei != null && client_name_mei.length() != 0 && client_name_sei_kana != null && client_name_sei_kana.length() != 0 && client_name_mei_kana != null && client_name_mei_kana.length() != 0 && birth_day != null && birth_day.length() != 0  && gender != null && gender.length() != 0 && address != null && address.length() != 0 && phone != null && phone.length() != 0 && emergency_name != null && emergency_name.length() != 0 && emergency_rel != null && emergency_rel.length() != 0 && emergency_phone != null && emergency_phone.length() != 0 && disability != null && disability.length() != 0 && expiration_start != null && expiration_start.length() != 0 && hospital != null && hospital.length() != 0 && doctor != null && doctor.length() != 0 && disability_type != null && disability_type.length() != 0 && disability_grade != null && disability_grade.length() != 0 && station != null && station.length() != 0 && expenses != null && expenses.length() != 0 && route != null && route.length() != 0 ) {
+	    if (client_login_name != null && client_login_name.length() != 0 && client_name_sei != null && client_name_sei.length() != 0 && client_name_mei != null && client_name_mei.length() != 0 && client_name_sei_kana != null && client_name_sei_kana.length() != 0 && client_name_mei_kana != null && client_name_mei_kana.length() != 0 && birth_day != null && birth_day.length() != 0  && gender != null && gender.length() != 0 && address != null && address.length() != 0 && phone != null && phone.length() != 0 && admission_day != null && admission_day.length() != 0  && emergency_name != null && emergency_name.length() != 0 && emergency_rel != null && emergency_rel.length() != 0 && emergency_phone != null && emergency_phone.length() != 0 && disability != null && disability.length() != 0 && expiration_start != null && expiration_start.length() != 0 && hospital != null && hospital.length() != 0 && doctor != null && doctor.length() != 0 && disability_type != null && disability_type.length() != 0 && disability_grade != null && disability_grade.length() != 0 && station != null && station.length() != 0 && expenses != null && expenses.length() != 0 && route != null && route.length() != 0 ) {
 
 	    
 	        // ユーザー登録を作成してリストに追加
 	    	LocalDate birthday = LocalDate.parse(birth_day);
+	    	LocalDate admissionday = LocalDate.parse(admission_day);
 	    	LocalDate expirationstart = LocalDate.parse(expiration_start);
 
 
-	        ClientResister clientResister =new ClientResister(client_login_name, client_name_sei, client_name_mei, client_name_sei_kana, client_name_mei_kana, birthday, gender, address, phone, emergency_name, emergency_rel, emergency_phone, disability, expirationstart, hospital, doctor, disability_type, disability_grade, station, expenses, route);
+	        ClientResister clientResister =new ClientResister(client_login_name, client_name_sei, client_name_mei, client_name_sei_kana, client_name_mei_kana, birthday, gender, address, phone, admissionday, emergency_name, emergency_rel, emergency_phone, disability, expirationstart, hospital, doctor, disability_type, disability_grade, station, expenses, route);
 	        System.out.println(client_login_name +", "+ client_name_sei +", "+ client_name_mei +", "+ client_name_sei_kana +", "+ client_name_mei_kana);
 	        ClientResisterLogic crLogic = new ClientResisterLogic();
 			boolean result = crLogic.execute_cr(clientResister);

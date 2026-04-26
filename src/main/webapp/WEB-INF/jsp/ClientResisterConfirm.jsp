@@ -23,10 +23,12 @@
     <p> 利用者様の氏名：<c:out value="${ClientResister.client_name_sei}" /> 　<c:out value="${ClientResister.client_name_mei}" /></p>
     <p> 利用者様の氏名（ふりがな）：<c:out value="${ClientResister.client_name_sei_kana}" /> 　<c:out value="${ClientResister.client_name_mei_kana}" /></p>
 	<p></p>
-	<p>誕生年月日:（全て半角でoooo/oo/oo）:<c:out value="${birthday}" /></p>
+	<p>誕生年月日:<c:out value="${birthday}" /></p>
 	<p>性別:<c:out value="${ClientResister.gender}" /></p>
 	<p>住所:<c:out value="${ClientResister.address}" /></p>
-	<p>電話番号(ハイフォン付きで (例) 090-oooo-oooo):<c:out value="${ClientResister.phone}" /></p>
+	<p>電話番号:<c:out value="${ClientResister.phone}" /></p>
+	<p></p>
+	<p>利用を開始した年月日:<c:out value="${admissionday}" /></p>
 	<p></p>
 	<p>●緊急連絡先関係</p>
 	<p>氏名:<c:out value="${ClientResister.emergency_name}" /></p>
@@ -35,7 +37,7 @@
 	<p></p>
 	<p>●障がい関係</p>
 	<p>障がい名:<c:out value="${ClientResister.disability}" /></p>
-	<p>受給者証有効期限:（全て半角でoooo/oo/oo）:<c:out value="${expiration_start}" /></p>
+	<p>受給者証有効期限:<c:out value="${expiration_start}" /></p>
 	<p>通院先病院名:<c:out value="${ClientResister.hospital}" /></p>
 	<p>主治医名:<c:out value="${ClientResister.doctor}" /></p>
 	<p></p>

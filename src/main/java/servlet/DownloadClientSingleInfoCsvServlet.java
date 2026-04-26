@@ -45,6 +45,7 @@ public class DownloadClientSingleInfoCsvServlet extends HttpServlet {
             pw.println("性別," + csiList.getGender());
             pw.println("住所," + csiList.getAddress());
             pw.println("電話番号," + csiList.getPhone());
+            pw.println("利用を開始した年月日," + csiList.getAdmissionday());
             pw.println("緊急連絡先 氏名," + csiList.getEmergency_name());
             pw.println("緊急連絡先 続柄," + csiList.getEmergency_rel());
             pw.println("緊急連絡先 電話番号," + csiList.getEmergency_phone());
