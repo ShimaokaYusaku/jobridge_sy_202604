@@ -10,9 +10,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+import dao.SCSU_AdmissionDaysDAO;
 import model.LoginStaffAccount;
 import model.StaffClientSupport;
-import model.StaffClientSupportUpdateLogic;
+import model.StaffClientSupportUpdate;
 
 /**
  * Servlet implementation class StaffClientSupportUpdateServlet
@@ -43,24 +44,24 @@ public class StaffClientSupportUpdateServlet extends HttpServlet {
 	        StaffClientSupport staffClientSupport =new StaffClientSupport(staffClientSupport_second_name_sei, staffClientSupport_second_name_mei);
 	        System.out.println(staffClientSupport_second_name_sei +", "+ staffClientSupport_second_name_mei);
 	        
-	    	StaffClientSupportUpdateLogic scsuLogic = new StaffClientSupportUpdateLogic();
-			boolean result = scsuLogic.execute_scsu(scsu);
+	        SCSU_AdmissionDaysDAO scsudao = new SCSU_AdmissionDaysDAO();
+	        StaffClientSupportUpdate  supportaccount12 =scsudao.create_scsu(staffClientSupport);
 	      
 	      // ログイン処理の成否によって処理を分岐
-	      if (result!=null) { // 登録成功時
+	      if (supportaccount12!=null) { // 登録成功時
 
 	        // フォワード（確認画面へ）
 	    	// request.setAttribute("scsList",scsList);
 	    	// 2回呼び出すので、1回だけのリクエストスコープではなく、セッションスコープへ修正
 	    	  HttpSession session9 = request.getSession(); // セッションを取得
-	    	  session9.setAttribute("StaffClientSupportUpdate", scsu);    // セッションスコープに保存
-	        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/StaffClientSupportUodate.jsp");
+	    	  session9.setAttribute("supportaccount12", supportaccount12);    // セッションスコープに保存
+	        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/StaffClientSupportUpdate.jsp");
 	        dispatcher.forward(request, response);
 	      } else { // 登録失敗時
 
 	    	  System.out.println("登録できませんでした・・・");
 	          request.setAttribute("errorMsg", "登録できませんでした。もう一度、時間を変更して、入力してください");
-	          RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/StaffClientSupportUodate.jsp");
+	          RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/StaffClientSupportUpdate.jsp");
 	          dispatcher.forward(request, response); // ★この一行を追加！
 	      }
 	      
@@ -68,7 +69,7 @@ public class StaffClientSupportUpdateServlet extends HttpServlet {
 	      // エラーメッセージをリクエストスコープに保存
 	  	  System.out.println("利用者様情報の登録内容に空欄がありました・・・");
 	      request.setAttribute("errorMsg", "入力されていない項目がありましたので、もう一度、最初から入力してください");
-	      RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/StaffClientSupportUodate.jsp");
+	      RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/StaffClientSupportUpdate.jsp");
 	      dispatcher.forward(request, response);
 
 	    }

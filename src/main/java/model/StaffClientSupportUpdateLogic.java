@@ -4,9 +4,9 @@ import dao.StaffClientSupportUpdatesDAO;
 
 public class StaffClientSupportUpdateLogic {
 
-	  public boolean execute_scsu(StaffClientSupport scs) { 
+	  public boolean  execute_scsu(StaffClientSupportUpdate scsu) { 
 		  StaffClientSupportUpdatesDAO scsudao = new StaffClientSupportUpdatesDAO();
-		  boolean  result =scsudao.create_scsu(scsu);
+		  boolean result =scsudao.update_scsu(scsu);
 	    return result;
 	  }
 	}

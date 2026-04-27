@@ -29,13 +29,8 @@ response.setDateHeader("Expires", 0);
 	<a href="ClientSingleInfoServlet">・利用者様情報（個別）</a><br>
 	<a href="ClientNameListServlet">・利用者様氏名一覧（氏名のみ）</a><br>
 	<a href="ClientTimeRecordInfoServlet">・利用者様の勤怠管理情報</a><br>
-	　・日ごとの出席者一覧<br>
-	　・利用者様の利用開始／終了および就職先情報<br>
-	　・就職先情報一覧<br>
-	　・就職までにかかった期間（通所期間）一覧<br>
-	　・障がい者受給者票の更新状況<br>
-	　・障がい者手帳、種別、等級一覧<br>
-	　・最寄駅、経路（一部）、交通費一覧<br>
+	<a href="StaffClientSupportCheckServlet">・利用者様の利用開始／終了および就職先情報</a><br>
+	<a href="ClientDisabilityListServlet">・障がい者受給者票の更新状況と、障がい者手帳の種別、等級一覧</a><br>
 	<a href="StaffInterviewCheckServlet">・面談記録</a><br>
 	<a href="StaffMeetingCheckServlet">・担当者会議記録</a><br>
 	<br>
@@ -45,7 +40,8 @@ response.setDateHeader("Expires", 0);
 	<a href="StaffInterviewServlet">・面談記録</a><br>
 	<a href="StaffMeetingServlet">・担当者会議記録</a><br>
 	<br>
-	<br>
+	★情報更新<br>
+	<a href="StaffClientSupportUpdateServlet">・利用者様の利用終了および就職先情報の更新</a><br>
 	<br>
 	<br>
 	<br>

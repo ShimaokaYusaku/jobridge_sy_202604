@@ -1,20 +1,26 @@
 package model;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class StaffClientSupportUpdate {
-	private LocalDate leavingday;
+	private String name_sei;
+	private String name_mei;
+	private Date admissionday;
+	private Date leavingday;
 	private String company;
 	private String occupation;
 	private String employ_type;
 	private Float working_hours;
-	private LocalDate  joinday;
+	private Date  joinday;
 	private String offer;
 	private String employed;
 	private String support_note;
     
 	  public StaffClientSupportUpdate() {}
-	  public StaffClientSupportUpdate(LocalDate leavingday, String company, String occupation, String employ_type, Float working_hours, LocalDate joinday, String offer, String employed, String support_note) {
+	  public StaffClientSupportUpdate(String name_sei, String name_mei, Date admissionday, Date leavingday, String company, String occupation, String employ_type, Float working_hours, Date joinday, String offer, String employed, String support_note) {
+		    this.name_sei = name_sei;
+		    this.name_mei = name_mei;
+		    this.admissionday = admissionday;
 		    this.leavingday = leavingday;
 		    this.company = company;
 		    this.occupation = occupation;
@@ -25,10 +31,24 @@ public class StaffClientSupportUpdate {
 		    this.employed = employed;
 		    this.support_note = support_note;
 	  }
-	  public LocalDate getLeavingday() {
+	  public String getName_sei() {
+		  return name_sei;
+	  }
+
+	  public void setName_sei(String name_sei) {
+		  this.name_sei = name_sei;
+	  }
+	  public String getName_mei() {
+		  return name_mei;
+	  }
+
+	  public Date getAdmissionday() {
+		  return admissionday;
+	  }
+	  public Date getLeavingday() {
 		  return leavingday;
 	  }
-	  public void setLeavingday(LocalDate leavingday) {
+	  public void setLeavingday(Date leavingday) {
 		  this.leavingday = leavingday;
 	  }
 	  public String getCompany() {
@@ -46,6 +66,12 @@ public class StaffClientSupportUpdate {
 	  public String getEmploy_type() {
 		  return employ_type;
 	  }
+	  public void setName_mei(String name_mei) {
+		  this.name_mei = name_mei;
+	  }
+	  public void setAdmissionday(Date admissionday) {
+		  this.admissionday = admissionday;
+	  }
 	  public void setEmploy_type(String employ_type) {
 		  this.employ_type = employ_type;
 	  }
@@ -55,10 +81,10 @@ public class StaffClientSupportUpdate {
 	  public void setWorking_hours(Float working_hours) {
 		  this.working_hours = working_hours;
 	  }
-	  public LocalDate getJoinday() {
+	  public Date getJoinday() {
 		  return joinday;
 	  }
-	  public void setJoinday(LocalDate joinday) {
+	  public void setJoinday(Date joinday) {
 		  this.joinday = joinday;
 	  }
 	  public String getOffer() {
